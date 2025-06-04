@@ -1,0 +1,28 @@
+﻿<Window x:Class="HandyControl.FlipClockApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:HandyControl.FlipClockApp"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="620"
+        Height="280"
+        hc:Theme.Skin="Dark"
+        Background="Transparent"
+        MouseDoubleClick="Window_MouseDoubleClick"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        mc:Ignorable="d">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" />
+    </WindowChrome.WindowChrome>
+
+    <Viewbox>
+        <hc:FlipClock x:Name="MainClock"
+                      BorderThickness="0"
+                      FontFamily="HarmonyOS Sans SC" />
+    </Viewbox>
+
+</Window>
