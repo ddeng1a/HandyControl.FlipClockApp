@@ -5,9 +5,9 @@ using System.Windows.Input;
 
 namespace HandyControl.FlipClockApp
 {
-    /// <summary>  
-    /// Interaction logic for MainWindow.xaml  
-    /// </summary>  
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly MainViewModel viewModel;
@@ -68,7 +68,7 @@ namespace HandyControl.FlipClockApp
                 { 
                     // 保持事件处理最小化
                     if (e.LeftButton == MouseButtonState.Pressed && WindowStyle == WindowStyle.None)
-                    {
+        {
                         DragMove();
                     }
                 }

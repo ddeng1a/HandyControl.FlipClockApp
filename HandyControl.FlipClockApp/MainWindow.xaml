@@ -29,11 +29,11 @@
     </Window.Resources>
 
     <Grid>
-        <Viewbox>
-            <hc:FlipClock x:Name="MainClock"
-                          BorderThickness="0"
-                          FontFamily="HarmonyOS Sans SC" />
-        </Viewbox>
+    <Viewbox>
+        <hc:FlipClock x:Name="MainClock"
+                      BorderThickness="0"
+                      FontFamily="HarmonyOS Sans SC" />
+    </Viewbox>
         <!--  控制按钮区  -->
         <StackPanel HorizontalAlignment="Right"
                     VerticalAlignment="Top"

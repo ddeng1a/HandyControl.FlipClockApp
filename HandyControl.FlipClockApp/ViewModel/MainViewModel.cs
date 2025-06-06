@@ -46,7 +46,7 @@ namespace HandyControl.FlipClockApp.ViewModel
 
         [RelayCommand]
         private void ToggeleTopmost()
-        {
+    {
             IsTopmost = !_settings.IsTopmost;
             _settings.IsTopmost = !_settings.IsTopmost;
         }

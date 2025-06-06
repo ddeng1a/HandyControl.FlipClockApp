@@ -1,4 +1,6 @@
-﻿namespace HandyControl.FlipClockApp.Model
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace HandyControl.FlipClockApp.Model
 {
     public partial class WidgetSettings
     {
