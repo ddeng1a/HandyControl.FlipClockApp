@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using HandyControl.FlipClockApp.Model;
 using HandyControl.FlipClockApp.Service;
+using System.Windows;
 
 namespace HandyControl.FlipClockApp.ViewModel
 {
@@ -59,6 +60,12 @@ namespace HandyControl.FlipClockApp.ViewModel
             //_settings.IsLocked = IsLocked;
             _settings.IsTopmost = IsTopmost;
             _settingsService.SaveSettings(_settings);
+        }
+
+        [RelayCommand]
+        private void Exit()
+        {
+            Application.Current.Shutdown();
         }
     }
 }

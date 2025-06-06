@@ -15,7 +15,7 @@
         Background="Transparent"
         Left="{Binding WindowLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         MouseDown="Window_MouseDown"
-        ResizeMode="CanResize"
+        ResizeMode="CanResizeWithGrip"
         ShowInTaskbar="false"
         Top="{Binding WindowTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         Topmost="{Binding IsTopmost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -23,32 +23,43 @@
         mc:Ignorable="d">
 
     <Window.Resources>
+        <converter:BoolToResizeModeConverter x:Key="ResizeModeConverter" />
         <converter:BoolToTopmostTextConverter x:Key="BoolToTopmostTextConverter" />
         <converter:BoolToIsLockedTextConverter x:Key="BoolToLockTextConverter" />
         <converter:MouseEventToWindowConverter x:Key="MouseEventArgsConverter" />
     </Window.Resources>
 
     <Grid>
-    <Viewbox>
-        <hc:FlipClock x:Name="MainClock"
-                      BorderThickness="0"
-                      FontFamily="HarmonyOS Sans SC" />
-    </Viewbox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Row="1">
+            <hc:FlipClock x:Name="MainClock"
+                          BorderThickness="0"
+                          FontFamily="HarmonyOS Sans SC" />
+        </Viewbox>
         <!--  控制按钮区  -->
-        <StackPanel HorizontalAlignment="Right"
+        <StackPanel Grid.Row="0"
+                    Margin="0,5,5,0"
+                    HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Orientation="Horizontal">
-            <Button Margin="5,0,5,0"
+            <Button Margin="0,0,5,0"
                     Command="{Binding ToggeleTopmostCommand}"
                     Content="{Binding IsTopmost, Converter={StaticResource BoolToTopmostTextConverter}, Mode=TwoWay}"
                     Visibility="{Binding IsLocked, Converter={StaticResource Boolean2VisibilityConverter}, Mode=TwoWay}" />
-            <Button Margin="5,0,5,0"
+            <Button Margin="0,0,5,0"
                     Command="{Binding ToggleLockedCommand}"
                     Content="{Binding IsLocked, Converter={StaticResource BoolToLockTextConverter}, Mode=TwoWay}" />
-            <Button Margin="5,0,5,0"
+            <Button Margin="0,0,5,0"
                     Command="{Binding SaveSettingsCommand}"
                     Content="保存设置"
                     Visibility="{Binding IsLocked, Converter={StaticResource Boolean2VisibilityConverter}, Mode=TwoWay}" />
+            <Button Margin="0,0,5,0"
+                    Command="{Binding ExitCommand}"
+                    Content="退出"
+                    Visibility="{Binding IsLocked, Converter={StaticResource Boolean2VisibilityConverter}}" />
         </StackPanel>
     </Grid>
 </Window>

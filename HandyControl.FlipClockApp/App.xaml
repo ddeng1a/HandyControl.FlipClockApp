@@ -1,6 +1,7 @@
 ﻿<Application x:Class="HandyControl.FlipClockApp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converter="clr-namespace:HandyControl.FlipClockApp.Converter"
              xmlns:local="clr-namespace:HandyControl.FlipClockApp">
     <Application.Resources>
         <ResourceDictionary>

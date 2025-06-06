@@ -3,6 +3,7 @@ using System.Windows.Data;
 
 namespace HandyControl.FlipClockApp.Converter
 {
+    [ValueConversion(typeof(bool), typeof(string))]
     public class BoolToTopmostTextConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
