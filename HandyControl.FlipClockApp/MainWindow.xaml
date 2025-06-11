@@ -10,24 +10,19 @@
         Title="MainWindow"
         Width="400"
         Height="150"
+        MinWidth="180"
+        MinHeight="90"
         hc:Theme.Skin="Dark"
         AllowsTransparency="True"
         Background="Transparent"
         Left="{Binding WindowLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         MouseDown="Window_MouseDown"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="{Binding IsLocked, Converter={StaticResource ResizeModeConverter}}"
         ShowInTaskbar="false"
         Top="{Binding WindowTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         Topmost="{Binding IsTopmost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         WindowStyle="None"
         mc:Ignorable="d">
-
-    <Window.Resources>
-        <converter:BoolToResizeModeConverter x:Key="ResizeModeConverter" />
-        <converter:BoolToTopmostTextConverter x:Key="BoolToTopmostTextConverter" />
-        <converter:BoolToIsLockedTextConverter x:Key="BoolToLockTextConverter" />
-        <converter:MouseEventToWindowConverter x:Key="MouseEventArgsConverter" />
-    </Window.Resources>
 
     <Grid>
         <Grid.RowDefinitions>

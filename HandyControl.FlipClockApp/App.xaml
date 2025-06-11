@@ -9,6 +9,13 @@
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <!--  注册转换器  -->
+            <converter:BoolToTopmostTextConverter x:Key="BoolToTopmostTextConverter" />
+            <converter:BoolToIsLockedTextConverter x:Key="BoolToLockTextConverter" />
+            <converter:BoolToResizeModeConverter x:Key="ResizeModeConverter" />
+            <converter:MouseEventToWindowConverter x:Key="MouseEventArgsConverter" />
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

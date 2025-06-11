@@ -11,7 +11,7 @@ namespace HandyControl.FlipClockApp.Converter
         {
             if (value is bool isLocked)
             {
-                return isLocked ? ResizeMode.NoResize : ResizeMode.CanResizeWithGrip;
+                return isLocked ? ResizeMode.CanResizeWithGrip : ResizeMode.NoResize;
             }
 
             return DependencyProperty.UnsetValue;
